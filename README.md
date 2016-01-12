@@ -5,7 +5,9 @@ HDPHP 2.0 Project of Online Mall system ZOLshop
 已基本完成了商城的全部功能，没有对接支付功能
 
 > 演示网址：http://chenhua.pro/shop 
+
 > 完成时间：7天web页面 + 14天PHP功能
+
 > 技术实现：Hdphp2.0框架、Jquery、AngularJS、Ajax
 
 项目描述：本商城系统已经实现用户注册、加入购物车以及购买商品等商城核心功能，稍做完善即可上线运营。

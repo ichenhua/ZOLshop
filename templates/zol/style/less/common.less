@@ -1,0 +1,176 @@
+//头部导航区域
+.top{ height:30px; line-height:30px; background:#F5F5F5;border-bottom:1px solid #E6E6E6;
+	.top_nav{ color:#D9CCD9; font-size:10px;
+		a{font-size:12px; margin:0 8px;
+			&:hover{text-decoration:underline;}
+		}
+	}
+	ul.top_login{
+		li{float:left; padding-left:20px;
+			a{color:#134BA0;
+				&:hover{text-decoration:underline;}
+				&.cart{color:#666;}
+			}
+			span{color:#C40000;}
+		}
+	}
+}
+
+//banner区域
+.banner{height:120px; position: relative;
+	.logo{position: absolute; left:0; top:30px;}
+	.title{height:50px; line-height:50px; padding-left:10px; font-size:14px; position: absolute; left:190px; top:30px; border-left:1px solid #E6E6E6; }
+	.search{ width:535px; height:65px; position: absolute; left:415px; top:35px;
+		.text{border:2px solid #C40000; height:32px; position: relative;
+			input{width:435px; height:22px; color:#666; padding:5px;}
+			button{width:88px; height:32px; line-height:32px; background:#C40000;position: absolute; right:0; top:0; color:#FFF; font-size:16px; cursor:pointer;}
+		}
+		.word{position: absolute; left:0; bottom:0; height:28px; line-height:28px;
+			a{margin-right:10px;}
+		}
+	}
+	.mark{position: absolute; right:0; top:25px;
+		img{width:180px; height:60px;}
+	}
+}
+
+//整站通用导航
+.navbar{ height:40px; line-height:40px; background:#CC0000;
+	ul{
+		li{ font-size:14px; float:left;
+			a{ height:40px; line-height:40px; padding:0 20px; display:inline-block; color:#FFF;
+				&:hover{background:#AB0101;}
+			}
+			&.nav{ position: relative;
+				a{ text-align:center; width:230px; padding:0; background:#AB0101;}
+				i{ font-weight:normal; font-size:12px; position: absolute; top:13px; right:15px; color:#FFF;}
+				.combobox{ width:228px; border:1px solid #EEE; border-top:none; position: absolute; top:40px; left:0; z-index:20; background:#FFF; display:none;
+					ul{
+						li{ width:100%; height:45px; line-height:45px; border-bottom:1px solid #E6E6E6; background:#FAFAFA; text-align: center;
+							a{ color:#333; font-size:14px; line-height:45px; padding-right:5px; width:auto; background:transparent;
+								&:hover{text-decoration:underline;}
+							}
+							.ext{ width:690px; height:348px; background:#FFF; position: absolute; top:0; left:229px; z-index:100; border-right:1px solid #EEE; border-bottom:1px solid #EEE; padding:10px 30px; display:none; 
+								dl{ padding:10px 0; border-bottom:1px solid #EEE; overflow:hidden;
+									dt{display:inline-block; width:130px; float:left; color:#444;}
+									dd{display:inline-block; float:left; font-weight:normal;
+										a{ margin-right:25px; color:#666;}
+									}
+								}
+							}
+							&:hover{background:#FFF;
+								.ext{display:block;}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//当前位置
+.location{height:45px; line-height:45px; font-size:12px;
+	a{font-size:14px;}
+	i{font-size:18px;}
+}
+
+
+//列表、详情主体部分  左小右大布局
+.main{ overflow:hidden; 
+	.left{ width:230px; float:left;
+		.common{ margin-bottom:10px; border:1px solid #E6E6E6;
+			h3{ height:32px; line-height:32px; font-weight:normal; text-indent:10px; background:#F7F7F7; color:#333;}
+		}
+		//分类部分
+		.cate{ border-top:2px solid #CC0000;
+			ul{ padding:10px;
+				li{ line-height:28px; font-size:14px;
+					i{color:#888; cursor: pointer;}
+					ul.ext{ padding:5px 0; margin-left:15px;
+						li{font-size:12px; line-height:25px;}
+					}
+				}
+			}
+		}
+		//抢购部分
+		.hot{
+			ul{ padding:12px;
+				li{ width:205px; height:295px; position: relative; 
+					img{ width:200px; height:200px; border:1px solid #E6E6E6; position: absolute; top:0; left:0;}
+					.title{ height:35px; overflow:hidden; position: absolute; top:210px; left:0; }
+					.price{ font-size:18px; color:#FF3333; position: absolute; top:250px; left:0;}
+					.time{position: absolute; top:255px; right:0;}
+				}
+			}
+		}
+		//最近浏览
+		.view{
+			ul{ padding:12px 12px 0 12px;
+				li{ width:205px; height:90px; border-bottom:1px solid #E6E6E6; margin-bottom:10px; position: relative; 
+					img{ width:80px; height:80px; border:1px solid #E6E6E6; position: absolute; top:0; left:0;}
+					.title{ width:120px; height:40px; line-height:20px; position: absolute; top:5px; left:90px; overflow:hidden; }
+					.price{ font-size:16px; color:#FF3333; position: absolute; top:55px; left:90px;}
+				}
+			}
+		}
+	}
+	.right{ width:960px; float:right;}
+}
+
+
+//购物车相关主要部分 100%宽度布局
+.home{ overflow:hidden;}
+
+//底部
+.footer{ border-top:1px solid #D9D9D9; margin-top:30px;
+	//正品保证
+	.ensure{height:50px; padding:30px 0; background:url(../img/icon_bg.png) no-repeat 0 30px; border-bottom:1px solid #D9D9D9;
+		a{width:196px; height:50px; line-height:50px; text-indent:60px; font-size:18px; display:inline-block;}
+	}
+	//
+	.service{ padding:25px 0; overflow:hidden;
+		ul{ float:left;
+			li{width:175px; float:left;
+				h4{ height:30px; line-height:30px; font-size:14px;}
+				a{ height:30px; color:#666; display:block; line-height:30px;
+					&:hover{text-decoration:underline;}
+				}
+			}
+		}
+		dl{width:160px; float:right; padding-left:60px; margin-left:30px;
+			dt{height:30px; line-height:30px; font-size:16px; font-weight:bold;}
+			dd{height:30px; line-height:30px; color:#333;}
+			&.hotline{ background:url(../img/footer.png) no-repeat 0 -90px;
+				a{color:#333; text-indent:28px; background:url(../img/footer.png) no-repeat; display:inline-block;
+					&:hover{text-decoration:underline;}
+				}
+			}
+			&.cooperation{ background:url(../img/footer.png) no-repeat 0 -215px;
+				a{ display:inline-block; background:#FF3333; border-radius:2px; color:#FFF; padding:0 10px; margin-top:5px;
+					&:hover{background:#C40000;}
+				}
+			}
+		}
+	}
+	.bottom{padding:30px 0; background:#2D2D2D;
+		.link{ padding:5px 0;
+			dl{ line-height:25px;
+				dt{ width:65px; vertical-align:top; color:#CCC; display:inline-block;}
+				dd{ width:1130px; display:inline-block;
+					a{color:#FFF; margin:0 8px;
+						&:hover{text-decoration:underline;}
+					}
+				}
+			}
+		}
+		.copyright{ color:#CCC; padding:5px 0; line-height:25px;
+			a{ color:#CCC; margin-right:20px;
+				&:hover{text-decoration:underline;}
+			}
+			.authentication{margin-top:10px;
+				a{ margin-right:0px; display:inline-block;}
+			}
+		}
+	}
+}

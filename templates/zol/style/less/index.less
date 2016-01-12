@@ -1,0 +1,142 @@
+//nav区域
+.nav{ height:30px; line-height:30px; border-bottom:2px solid #C40000;
+	ul{
+		li{
+			a{ font-size:16px; display:inline-block; padding:0 20px;
+				&.index{ font-size:14px; text-align:center; background:#C40000; width:160px; height:30px; color:#FFF; }
+			}
+			&.scoll{
+				a{padding: 0; color:#C40000;
+					&:hover{text-decoration: underline;}
+				}
+			}
+		}
+	}
+}
+
+//menu区域
+.menu{ height:410px; position: relative;
+	.left{width:200px; height:410px; background:#2D2D2D; position: absolute; top:0; left:0;
+		ul{border-left:1px solid #2D2D2D;
+			li{ height: 38px; line-height:38px; padding-left:30px; color:#FFF; font-weight:bold; border-bottom:1px solid #3D3D3D; 
+				i{ color:#CCC;}
+				a{ color:#FFF; }
+				.ext{ width:690px; height:349px; background:#FFF; position: absolute; top:0; left:200px; z-index:100; display:none; border-right:1px solid #EEE; border-bottom:1px solid #EEE; padding:10px 30px;
+					dl{ padding:10px 0; border-bottom:1px solid #EEE; overflow:hidden;
+						dt{display:inline-block; width:70px; float:left;}
+						dd{display:inline-block; float:left; font-weight:normal; 
+							a{ margin-right:25px;}
+						}
+					}
+				}
+				&:hover{background:#FFF; color:#2D2D2D;
+					.ext{display:block;}
+					i{color:#666;}
+					a{color:#2D2D2D;}
+				}
+			}
+		}
+		.left_ad{width:200px; height:70px; background:#222222; position: absolute; bottom:0;
+			img{width:200px;}
+		}
+	}
+	.flash{width:740px; height:400px; position: absolute; top:10px; left:210px;}
+	.right{ width:240px; height:398px; position: absolute; top:10px; right:0; border:1px solid #EDEDED;
+		dl{padding: 10px 20px 20px; border-bottom:1px solid #EDEDED;
+			dt{ line-height:30px; font-size:14px; color:#222222; }
+			dd{ line-height:25px;}
+		}
+		.right_ad{
+			img{width:240px; height:212px;}
+		}
+	}
+}
+
+
+.banner_ad{margin-top:20px;
+	img{width:1200px;}
+}
+
+
+//楼层通用
+.floor{ margin-top:25px;
+	.title{ height:40px; line-height:40px; margin-bottom:5px;
+		h2{ color:#333; font-weight:normal; font-size:24px; display:inline-block;}
+		.more{ line-height:20px; margin-top:18px;
+			a{margin-left:15px; color:#666;
+				&:hover{color:#C40000; text-decoration: underline;}
+			}
+		}
+	}
+}
+
+
+//楼层 - 抢购
+.floor{
+	.hot{width:1198px; height:258px; overflow:hidden; border:1px solid #EDEDED;
+		ul{ width:1210px;
+			li{width:240px; height:258px; border-right:1px solid #EDEDED;float:left; position: relative;
+				img{width:150px; height:150px; position: absolute; top:20px; left:45px;}
+				h3{ width:200px; height:22px; overflow:hidden; text-align: center; font-weight:normal; position: absolute; top:180px; left:20px; }
+				.info{width:200px; height:45px; position: absolute; bottom:0; left:20px; 
+					p{ display:inline-block;
+						&.price{ font-size:20px; color:#FF3333; margin-right:5px; margin-top:3px;}
+						&.o_price{ text-decoration:line-through; }
+					}
+					a{width:80px; height:25px; background:#FF3333; font-size:14px; color:#FFF; float:right; display:inline-block; border-radius:5px; text-align:center; line-height:25px; position: absolute; top:5px; right:0; }
+				}
+			}
+		}
+	}
+}
+
+//楼层 - 团购
+.floor{
+	.tuan{width:1200px; height:300px; overflow:hidden; 
+		ul{ width:1220px;
+			li{width:288px; height:298px; margin-right:13px; border:1px solid #EDEDED;float:left; position: relative;
+				img{width:288px; height:215px; position: absolute; top:0; left:0;}
+				h3{ width:270px; height:22px; overflow:hidden; text-align: center; font-weight:normal; position: absolute; top:225px; left:9px; }
+				.info{width:270px; height:45px; position: absolute; bottom:0; left:9px; 
+					p{ display:inline-block;
+						&.price{ font-size:24px; color:#FF3333; margin-right:5px;}
+						&.o_price{ text-decoration:line-through; }
+					}
+					strong{position: absolute; bottom:15px; right:0; font-weight:normal;}
+				}
+			}
+		}
+	}
+}
+
+
+//楼层 - 楼层通用模板
+.floor{
+	.common{width:1198px; height:415px; overflow:hidden; border:1px solid #EDEDED; position: relative;
+		.cover{ position: absolute; top:0; left:0;
+			img{width:360px; height:420px;}
+		}
+		ul{width:840px; position: absolute; top:0; left:360px;
+			li{width:209px; height:209px; border-right:1px solid #EDEDED; border-bottom:1px solid #EDEDED; float:left; position: relative;
+				img{width:120px; height:120px; position: absolute; top:55px; left:45px;}
+				h3{width:160px; height:22px; line-height:22px; overflow:hidden; text-align: center; font-weight:normal; position: absolute; top:20px; left:20px; }
+				p{width:160px; height:22px; line-height:22px; overflow:hidden; text-align: center; font-weight:normal; position: absolute; top:36px; left:20px; color:red;}
+				&.first{width:419px;
+					img{width:419px; height:209px; position: absolute; top:0; left:0;}
+				}
+			}
+		}
+		.bottom{ width:1220px; height:65px; border-top:1px solid #EDEDED; position: absolute; bottom:0; left:0;
+			a{ padding:2px 0; float:left; border-left:1px solid #FFF; border-right:1px solid #FFF; 
+				&:hover{border-left:1px solid #EDEDED; border-right:1px solid #EDEDED; }
+				img{width:118px; height:60px;}
+			}
+		}
+	}
+}
+
+
+
+
+
+

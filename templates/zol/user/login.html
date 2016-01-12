@@ -1,0 +1,30 @@
+{{include file="templates/zol/common/header_sm.html"}}
+
+		<!--登录主体部分 开始-->
+		<div class="w960 home">
+			<div class="left">
+				<div class="login">
+					<div class="login_img"><a href="#"><img src="{{__ROOT__}}/templates/zol/style/img/login_ad.jpg"></a></div>
+					<form action="{{U('Home/User/login')}}" method="post">
+					<div class="login_form">
+						<h3>登录ZOL商城</h3>
+						<input type="text" name="username" placeholder="用户名">
+						<input type="password" name="password" placeholder="密码">
+						<a href="">忘记密码？</a>
+						<input type="submit" value="登录">
+						<p class="has">没有ZOL商城账号？<a href="{{U('Home/User/reg')}}">点击注册</a></p>
+						<div class="fast-login-list">
+							<span>合作账号登录：</span>
+							<a href="" class="sina"></a>
+							<a href="" class="qq"></a>
+							<a href="" class="alipay"></a>
+							<a href="" class="baidu"></a>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--登录主体部分 结束-->
+
+{{include file="templates/zol/common/footer_sm.html"}}

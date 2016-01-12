@@ -1,0 +1,56 @@
+//个人中心等主要部分 左右分栏布局
+.center{ overflow:hidden;
+	.sidebar{width:180px; float:left; background:#F8F8F8; border:1px solid #E6E6E6;
+		dl{ font-size:14px;
+			dt{ width:180px; height:50px; line-height:50px; text-align: center; color:#FFF; background:#CC0000; font-weight:bold; position: relative; text-indent:20px;
+				i{position: absolute; top:20px; left:25px;}
+			}
+			dd{ width:180px; height:50px; line-height:50px; text-align: center; border-bottom:1px solid #E6E6E6;
+				a{height:100%; width:100%; display:inline-block; text-indent:20px; position: relative;
+					i{position: absolute; top:18px; left:30px;}
+				}
+			}
+		}
+	}
+	.content{ width:760px; float:right; border:1px solid #E6E6E6;
+		.info{ height:200px; position: relative;
+			.avatar{ width:80px; height:80px; border-radius:50%; border:3px solid #E6E6E6; overflow:hidden; position: absolute; top:50px; left:50px;
+				img{width:80px; height:80px;}
+			}
+			.intro{ width:580px; height:100px; position: absolute; top:50px; left:180px;
+				h2{font-size:18px; font-weight:normal; position: absolute; top:0;}
+				p{position: absolute; top:35px;}
+				ul{position: absolute; top:65px;
+					li{ display:inline-block; margin-right:20px;
+						span{ color:#CC0000; }
+					}
+				}
+			}
+		}
+		.fast_nav{height:50px; line-height:50px; border-top:1px solid #E6E6E6; border-bottom:1px solid #E6E6E6;
+			ul{
+				li{border-right:1px solid #E6E6E6; float:left;
+					&.active{ background:#F8F8F8; 
+						a{color:#CC0000;}
+					}
+					a{padding:0 30px; height:100%; display:inline-block;}
+				}
+			}
+		}
+		.list{ padding:15px 30px; 
+			table{width:700px; border-collapse: collapse;
+				tr{ height:40px; line-height:40px; 
+					th{}
+					td{ border-top:1px solid #E6E6E6;
+						&.td-1{width:10%; text-align:center;}
+						&.td-2{width:20%; text-align:center;}
+						&.td-3{width:30%; text-align:center;}
+						&.td-4{width:40%;}
+						&.td-5{width:50%;}
+						&.td-6{width:60%;}
+					}
+				}
+			}
+		}
+	}
+}

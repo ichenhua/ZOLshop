@@ -1,0 +1,49 @@
+<!--头部导航开始-->
+    	<div class="w100pre top">
+    		<div class="w1200">
+    			<div class="pull_left top_nav">
+    				<a href="http://www.wysls.com">大学生演讲网</a> | 
+    				<a href="http://chenhua.wang">陈华博客</a>
+    			</div>
+    			{{if value="isset($_SESSION['user']['user_id'])"}}
+    			<ul class="pull_right top_login">
+    				<li>欢迎来到ZOL商城，<a href="{{U('Home/User/home')}}">{{$_SESSION['user']['username']}}</a> [<a href="{{U('Home/User/quit')}}">退出</a>]</li>
+    				<li><a href="{{U('Home/Goods/cart')}}" class="cart">购物车</a></li>
+					<li><a href="{{U('Home/Article/article',array('article'=>16))}}">帮助中心</a></li>
+					<li>客服电话：<span>400-678-0068</span></li>
+    			</ul>
+				{{else}}
+				<ul class="pull_right top_login">
+    				<li>欢迎来到ZOL商城，请<a href="{{U('Home/User/login')}}">登录</a> [<a href="{{U('Home/User/reg')}}">免费注册</a>]</li>
+    				<li><a href="{{U('Home/Goods/cart')}}" class="cart">购物车</a></li>
+					<li><a href="{{U('Home/Article/article',array('article'=>16))}}">帮助中心</a></li>
+					<li>客服电话：<span>400-678-0068</span></li>
+    			</ul>
+				{{endif}}
+    		</div>
+    	</div>
+    	<!--头部导航结束-->
+		
+		<!--banner区域开始-->
+		<div class="w1200 banner">
+			<div class="logo"><a href="{{__ROOT__}}"><img src="{{__ROOT__}}/templates/zol/images/logo_180x50.png"/></a></div>
+			<div class="title">中关村在线旗下网上商城</div>
+			<div class="search">
+				<div class="text">
+					<input type="text">
+					<button>搜 索</button>
+				</div>
+				<div class="word" style="display:none">
+					<a href="">月末亏本促</a> 
+					<a href="">华为荣耀4C</a>
+					<a href="">华为</a>
+					<a href="">荣耀7</a>
+					<a href="">魅族</a>
+					<a href="">MX5</a>
+					<a href="">魅蓝</a>
+					<a href="">Note2</a>
+				</div>
+			</div>
+			<div class="mark"><a href="#"><img src="{{__ROOT__}}/templates/zol/images/mark.jpg"/></a></div>
+		</div>
+		<!--banner区域结束-->

@@ -1,0 +1,67 @@
+{{include file="templates/zol/common/header_sm.html"}}
+
+		<!--个人中心 开始-->
+		<div class="w960 center">
+			{{include file="templates/zol/common/home_side.html"}}
+			<div class="content">
+				{{include file="templates/zol/common/home_info.html"}}
+				
+				<div class="cart_list">
+
+					<?php foreach ($order as $k => $v): ?>
+						<table width="100%" class="order_list">
+							<tr>
+								<th colspan="5">
+									<p><input type="checkbox"></p> 
+									<p class="blod">订单号：{{$v['order_sn']}}</p>
+									<p>创建时间：{{date('Y/m/d H:i',$v['create_at'])}}</p>
+									<p class="blod">总价：{{$v['order_price']}}</p>
+									<p class="red">当前状态：
+									<?php
+										switch ($v['order_state']) {
+											case 0:
+											echo '未付款</p> <p><a href="#">去支付>></a>';
+												break;
+											case 1:
+												echo '已付款';
+												break;
+											case 2:
+												echo '已发货';
+												break;
+											case 3:
+												echo '已完成';
+												break;
+											case 4:
+												echo '已完成';
+												break;
+										}
+									?>
+									</p>
+								</th>
+							</tr>
+
+							<?php foreach ($v['order_list'] as $m => $n): ?>
+							<tr>
+								<td class="t-1">
+									<img src="{{__ROOT__}}/{{$n['goods_info']['thumb_pic']}}">
+								</td>
+								<td class="t-2">
+									<a href="#">{{$n['goods_info']['goods_name']}}</a>
+									<p>{{$n['attr_info']}}</p>
+								</td>
+								<td class="t-3">{{$n['list_price']}}</td>
+								<td class="t-4">{{$n['buy_num']}}</td>
+								<td class="t-5"><a href="{{U('Home/Goods/index',array('goods_id'=>$n['goods_info']['goods_id']))}}" target="_blank">查看</a></td>
+							</tr>
+							<?php endforeach ?>
+
+						</table>
+					<?php endforeach ?>
+
+				</div>
+
+			</div>
+		</div>
+		<!--个人中心 开始-->
+
+{{include file="templates/zol/common/footer_sm.html"}}

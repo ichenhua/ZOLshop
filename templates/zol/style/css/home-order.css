@@ -1,0 +1,110 @@
+.cart_list {
+  border-top: 2px solid #E02D2D;
+}
+.cart_list table.order_list {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+.cart_list table.order_list tr th {
+  line-height: 40px;
+  padding: 0 10px;
+  background: #F3F3F3;
+  font-weight: normal;
+  text-align: left;
+}
+.cart_list table.order_list tr th input[type='checkbox'] {
+  margin: 0 5px 0 0;
+  position: relative;
+  top: 2px;
+}
+.cart_list table.order_list tr th p {
+  float: left;
+  margin-right: 15px;
+}
+.cart_list table.order_list tr th .blod {
+  font-weight: bold;
+}
+.cart_list table.order_list tr td {
+  vertical-align: top;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  padding: 15px 0;
+}
+.cart_list table.order_list tr td.t-1 {
+  width: 115px;
+}
+.cart_list table.order_list tr td.t-1 input[type='checkbox'] {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+.cart_list table.order_list tr td.t-1 img {
+  position: absolute;
+  top: 15px;
+  left: 35px;
+}
+.cart_list table.order_list tr td.t-2 {
+  width: 400px;
+  text-align: left;
+}
+.cart_list table.order_list tr td.t-2 p {
+  float: left;
+  width: 100%;
+  line-height: 20px;
+}
+.cart_list table.order_list tr td.t-2 a {
+  float: left;
+  font-size: 12px;
+  color: #134BB4;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.cart_list table.order_list tr td.t-3 {
+  width: 90px;
+}
+.cart_list table.order_list tr td.t-4 {
+  width: 90px;
+}
+.cart_list table.order_list tr td.t-4 .num {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.cart_list table.order_list tr td.t-4 .num i {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background: #F8F8F8;
+  color: #666;
+  border: 1px solid #E6E6E6;
+  display: inline-block;
+  float: left;
+}
+.cart_list table.order_list tr td.t-4 .num input {
+  width: 45px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+  float: left;
+}
+.cart_list table.order_list tr td.t-5 {
+  width: 90px;
+  text-align: center;
+}
+.cart_list table.order_list tr td.t-5 a {
+  color: #E02D2D;
+  text-decoration: underline;
+}
+.cart_list table.order_list tr td img {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  border: 1px solid #E9E9E9;
+}

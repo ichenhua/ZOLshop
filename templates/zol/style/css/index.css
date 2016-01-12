@@ -1,0 +1,387 @@
+.nav {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 2px solid #C40000;
+}
+.nav ul li a {
+  font-size: 16px;
+  display: inline-block;
+  padding: 0 20px;
+}
+.nav ul li a.index {
+  font-size: 14px;
+  text-align: center;
+  background: #C40000;
+  width: 160px;
+  height: 30px;
+  color: #FFF;
+}
+.nav ul li.scoll a {
+  padding: 0;
+  color: #C40000;
+}
+.nav ul li.scoll a:hover {
+  text-decoration: underline;
+}
+.menu {
+  height: 410px;
+  position: relative;
+}
+.menu .left {
+  width: 200px;
+  height: 410px;
+  background: #2D2D2D;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.menu .left ul {
+  border-left: 1px solid #2D2D2D;
+}
+.menu .left ul li {
+  height: 38px;
+  line-height: 38px;
+  padding-left: 30px;
+  color: #FFF;
+  font-weight: bold;
+  border-bottom: 1px solid #3D3D3D;
+}
+.menu .left ul li i {
+  color: #CCC;
+}
+.menu .left ul li a {
+  color: #FFF;
+}
+.menu .left ul li .ext {
+  width: 690px;
+  height: 349px;
+  background: #FFF;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  z-index: 100;
+  display: none;
+  border-right: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+  padding: 10px 30px;
+}
+.menu .left ul li .ext dl {
+  padding: 10px 0;
+  border-bottom: 1px solid #EEE;
+  overflow: hidden;
+}
+.menu .left ul li .ext dl dt {
+  display: inline-block;
+  width: 70px;
+  float: left;
+}
+.menu .left ul li .ext dl dd {
+  display: inline-block;
+  float: left;
+  font-weight: normal;
+}
+.menu .left ul li .ext dl dd a {
+  margin-right: 25px;
+}
+.menu .left ul li:hover {
+  background: #FFF;
+  color: #2D2D2D;
+}
+.menu .left ul li:hover .ext {
+  display: block;
+}
+.menu .left ul li:hover i {
+  color: #666;
+}
+.menu .left ul li:hover a {
+  color: #2D2D2D;
+}
+.menu .left .left_ad {
+  width: 200px;
+  height: 70px;
+  background: #222222;
+  position: absolute;
+  bottom: 0;
+}
+.menu .left .left_ad img {
+  width: 200px;
+}
+.menu .flash {
+  width: 740px;
+  height: 400px;
+  position: absolute;
+  top: 10px;
+  left: 210px;
+}
+.menu .right {
+  width: 240px;
+  height: 398px;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  border: 1px solid #EDEDED;
+}
+.menu .right dl {
+  padding: 10px 20px 20px;
+  border-bottom: 1px solid #EDEDED;
+}
+.menu .right dl dt {
+  line-height: 30px;
+  font-size: 14px;
+  color: #222222;
+}
+.menu .right dl dd {
+  line-height: 25px;
+}
+.menu .right .right_ad img {
+  width: 240px;
+  height: 212px;
+}
+.banner_ad {
+  margin-top: 20px;
+}
+.banner_ad img {
+  width: 1200px;
+}
+.floor {
+  margin-top: 25px;
+}
+.floor .title {
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 5px;
+}
+.floor .title h2 {
+  color: #333;
+  font-weight: normal;
+  font-size: 24px;
+  display: inline-block;
+}
+.floor .title .more {
+  line-height: 20px;
+  margin-top: 18px;
+}
+.floor .title .more a {
+  margin-left: 15px;
+  color: #666;
+}
+.floor .title .more a:hover {
+  color: #C40000;
+  text-decoration: underline;
+}
+.floor .hot {
+  width: 1198px;
+  height: 258px;
+  overflow: hidden;
+  border: 1px solid #EDEDED;
+}
+.floor .hot ul {
+  width: 1210px;
+}
+.floor .hot ul li {
+  width: 240px;
+  height: 258px;
+  border-right: 1px solid #EDEDED;
+  float: left;
+  position: relative;
+}
+.floor .hot ul li img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 20px;
+  left: 45px;
+}
+.floor .hot ul li h3 {
+  width: 200px;
+  height: 22px;
+  overflow: hidden;
+  text-align: center;
+  font-weight: normal;
+  position: absolute;
+  top: 180px;
+  left: 20px;
+}
+.floor .hot ul li .info {
+  width: 200px;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+.floor .hot ul li .info p {
+  display: inline-block;
+}
+.floor .hot ul li .info p.price {
+  font-size: 20px;
+  color: #FF3333;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+.floor .hot ul li .info p.o_price {
+  text-decoration: line-through;
+}
+.floor .hot ul li .info a {
+  width: 80px;
+  height: 25px;
+  background: #FF3333;
+  font-size: 14px;
+  color: #FFF;
+  float: right;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 25px;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+.floor .tuan {
+  width: 1200px;
+  height: 300px;
+  overflow: hidden;
+}
+.floor .tuan ul {
+  width: 1220px;
+}
+.floor .tuan ul li {
+  width: 288px;
+  height: 298px;
+  margin-right: 13px;
+  border: 1px solid #EDEDED;
+  float: left;
+  position: relative;
+}
+.floor .tuan ul li img {
+  width: 288px;
+  height: 215px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.floor .tuan ul li h3 {
+  width: 270px;
+  height: 22px;
+  overflow: hidden;
+  text-align: center;
+  font-weight: normal;
+  position: absolute;
+  top: 225px;
+  left: 9px;
+}
+.floor .tuan ul li .info {
+  width: 270px;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 9px;
+}
+.floor .tuan ul li .info p {
+  display: inline-block;
+}
+.floor .tuan ul li .info p.price {
+  font-size: 24px;
+  color: #FF3333;
+  margin-right: 5px;
+}
+.floor .tuan ul li .info p.o_price {
+  text-decoration: line-through;
+}
+.floor .tuan ul li .info strong {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  font-weight: normal;
+}
+.floor .common {
+  width: 1198px;
+  height: 415px;
+  overflow: hidden;
+  border: 1px solid #EDEDED;
+  position: relative;
+}
+.floor .common .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.floor .common .cover img {
+  width: 360px;
+  height: 420px;
+}
+.floor .common ul {
+  width: 840px;
+  position: absolute;
+  top: 0;
+  left: 360px;
+}
+.floor .common ul li {
+  width: 209px;
+  height: 209px;
+  border-right: 1px solid #EDEDED;
+  border-bottom: 1px solid #EDEDED;
+  float: left;
+  position: relative;
+}
+.floor .common ul li img {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 55px;
+  left: 45px;
+}
+.floor .common ul li h3 {
+  width: 160px;
+  height: 22px;
+  line-height: 22px;
+  overflow: hidden;
+  text-align: center;
+  font-weight: normal;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.floor .common ul li p {
+  width: 160px;
+  height: 22px;
+  line-height: 22px;
+  overflow: hidden;
+  text-align: center;
+  font-weight: normal;
+  position: absolute;
+  top: 36px;
+  left: 20px;
+  color: red;
+}
+.floor .common ul li.first {
+  width: 419px;
+}
+.floor .common ul li.first img {
+  width: 419px;
+  height: 209px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.floor .common .bottom {
+  width: 1220px;
+  height: 65px;
+  border-top: 1px solid #EDEDED;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.floor .common .bottom a {
+  padding: 2px 0;
+  float: left;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+}
+.floor .common .bottom a:hover {
+  border-left: 1px solid #EDEDED;
+  border-right: 1px solid #EDEDED;
+}
+.floor .common .bottom a img {
+  width: 118px;
+  height: 60px;
+}

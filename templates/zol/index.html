@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ZOL商城(ZOL.COM)-中国最大3C网络电子商城｜正品低价 放心购</title>
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/main.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/common.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/index.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/font/css/font-awesome.min.css">
+    </head>
+    <body>
+    	{{include file="templates/zol/common/header.html"}}
+		<!--nav区域开始-->
+		<div class="w1200 nav">
+			<ul>
+				<li class="pull_left">
+					<a href="#" class="index">商品分类</a>
+					<a href="{{__ROOT__}}">首页</a>
+					<a href="{{U('Home/Lists/Index',array('cate_id'=>12))}}">分类页</a>
+					<a href="{{U('Home/Goods/Index',array('goods_id'=>1))}}">详情页</a>
+					<a href="http://chenhua.wang" target="_blank">陈华博客</a>
+					<a href="http://www.wysls.com" target="_blank">大学生演讲网</a>
+				</li>
+				<li class="pull_right scoll">
+					<a href="http://chenhua.wang">查看更多案例网站</a>
+				</li>
+			</ul>
+		</div>
+		<!--nav区域结束-->
+
+		<!--menu区域开始-->
+		<div class="w1200 menu">
+			<div class="left">
+				<ul>
+					<?php foreach ($cateData as $k => $v): ?>
+						<li>{{$v['cate_name']}}
+							<div class="ext">
+								<?php foreach ($v['_data'] as $m => $n): ?>
+								<dl>
+									<dt>{{$n['cate_name']}}</dt>
+									<dd>
+										<?php foreach ($n['_data'] as $p => $q): ?>
+										<a href="{{U('Home/Lists/index',array('cate_id'=>$q['cate_id']))}}">{{$q['cate_name']}}</a>
+										<?php endforeach ?>
+									</dd>
+								</dl>
+								<?php endforeach ?>
+							</div>
+						</li>
+					<?php endforeach ?>
+				</ul>
+				<div class="left_ad">
+					<a href="{{U('Home/Goods/Index',array('goods_id'=>1))}}"><img src="{{__ROOT__}}/templates/zol/images/xiaomi.jpg"></a>
+				</div>
+			</div>
+			<div class="flash"><img src="{{__ROOT__}}/templates/zol/images/flash/3.jpg"></div>
+			<div class="right">
+				<dl>
+					<dt>商城公告</dt>
+					<dd><a href="{{U('Home/Article/article',array('article'=>19))}}">[温馨提示]大阅兵、世锦赛配送延迟</a></dd>
+					<dd><a href="{{U('Home/Article/article',array('article'=>20))}}">[众筹]先马600W白金牌电源 新品</a></dd>
+					<dd><a href="{{U('Home/Article/article',array('article'=>21))}}">[特惠]佳能打印机超值价 送大礼包</a></dd>
+					<dd><a href="{{U('Home/Article/article',array('article'=>22))}}">[新品]红米Note 2 新品现货促销！</a></dd>
+					<dd><a href="{{U('Home/Article/article',array('article'=>23))}}">[新款]影驰芒果盒 新款ZOL首发！</a></dd>
+				</dl>
+				<div class="right_ad"><a href="{{U('Home/Goods/Index',array('goods_id'=>1))}}"><img src="{{__ROOT__}}/templates/zol/images/right_ad.jpg"/></a></div>
+			</div>
+		</div>
+		<!--menu区域结束-->
+		
+		<!--抢购区域开始-->
+		<div class="w1200 floor">
+			<div class="title">
+				<h2>限时抢购</h2>
+			</div>
+			<div class="hot">
+				<ul>
+					<?php foreach ($new as $k => $v): ?>
+					<li>
+						<a href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}"><img src="{{__ROOT__}}/{{$v['thumb_pic']}}"></a>
+						<h3><a href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}">{{$v['goods_name']}}</a></h3>
+						<div class="info">
+							<p class="price">￥{{$v['goods_price']}}</p>
+							<a href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}">去抢购 ></a>
+						</div>
+					</li>
+					<?php endforeach ?>
+				</ul>
+			</div>
+		</div>
+		<!--抢购区域结束-->
+
+		<?php 
+			$i = 0; //楼层
+			foreach ($cateTree as $k => $v): 
+			$i++;
+			if($v['three']){
+		?>
+
+		<!--banner_ad 开始-->
+		<div class="w1200 banner_ad"><a href="{{U('Home/Lists/Index',array('cate_id'=>12))}}"><img src="{{__ROOT__}}/templates/zol/images/banner/{{$i}}.jpg"/></a></div>
+		<!--banner_ad 结束-->
+
+		<!--1F手机通讯 开始-->
+		<div class="w1200 floor">
+			<div class="title">
+				<h2>{{$i}}F {{$v['cate_name']}}</h2>
+			</div>
+			<div class="common">
+				<div class="cover"><a href="{{U('Home/Goods/Index',array('goods_id'=>1))}}"><img src="{{__ROOT__}}/templates/zol/images/common/{{$i}}.jpg"></a></div>
+				<ul>
+					<?php foreach ($v['level_goods'] as $m => $n): ?>
+					<li>
+						<h3><a href="{{U('Goods/index',array('goods_id'=>$n['goods_id']))}}">{{$n['goods_name']}}</a></h3>
+						<a href="{{U('Goods/index',array('goods_id'=>$n['goods_id']))}}"><img src="{{__ROOT__}}/{{$n['list_pic']}}"/></a>
+					</li>
+					<?php endforeach ?>
+				</ul>
+			</div>
+		</div>
+		<!--1F手机通讯 结束-->
+
+
+
+		<?php 
+		}
+		endforeach
+		?>
+
+{{include file="templates/zol/common/footer.html"}}
+
+    </body>
+</html>

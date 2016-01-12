@@ -1,0 +1,3 @@
+1、goods.html -> goods.js:43  设置缓存存储不了变量
+
+

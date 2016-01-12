@@ -1,0 +1,84 @@
+//主体部分 通用
+.main{ overflow:hidden; 
+	.right{ width:960px; float:right;
+		//分类筛选
+		.category_nav{width:958px; border:1px solid #E6E6E6; position: relative;
+			h3{ height:32px; line-height:32px; font-weight:normal; text-indent:10px; background:#F7F7F7; color:#333;}
+			ul{ padding:0 15px;
+				li{ line-height:35px; overflow:hidden; border-bottom: 1px solid #E6E6E6; position: relative;
+					dl{
+						dt{width:100px; margin-right:10px; text-align: right; float:left;}
+						dd{width:760px; margin-left:5px; float:left;
+							a{color:#134BA0; margin-right:32px;
+								&:hover,&.active{color:#CC0000; text-decoration:underline;}
+							}
+						}
+					}
+					a.more{ color:#666; position: absolute; right:0;
+						&:hover{color:#CC0000; text-decoration:underline;}
+					}
+				}
+			}
+			.open{ width:960px; height:5px; background:#F7F7F7; position: absolute; bottom:-6px; left:-1px;
+				a{width:130px; height:25px; background:#F7F7F7; text-align: center; display:inline-block; line-height:25px; position: absolute; left:50%; margin-left:-75px;}
+			}
+		}
+
+		//排序控制面板
+		.toolbar{width:958px; height:40px; border:1px solid #E6E6E6; margin-top:40px; background:#F5F5F5; position: relative;
+			ul{
+				li{ display:inline-block;
+					a{height:40px; line-height:40px; padding:0 20px; float:left; border-right:1px solid #E6E6E6;  display:inline-block;
+						&:hover,&.active{background:#FFF;}
+					}
+					&.pull_right{
+						a{border-left:1px solid #E6E6E6; border-right:0;
+							&:hover,&.active{color:#CC0000; background:#FFF;}
+						}
+						.page{ width:130px; height:40px; line-height:40px; text-align:center; display:inline-block; border-left:1px solid #E6E6E6;
+							span{ width:18px; height:18px; line-height:18px; text-align: center; border:1px solid #E6E6E6; display:inline-block; background:#FFF; cursor:pointer;
+								&:hover{color:#CC0000;}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		//宝贝列表
+		.list{width:960px; margin-top:20px; overflow:hidden;
+			ul{ width:990px;
+				li{width:223px; height:345px; margin-right:20px; margin-bottom:20px; border:1px solid #E6E6E6; float:left; position: relative;
+					&:hover{border:1px solid #CC0000;}
+					a{ width:200px; height:260px; position: absolute; top:10px; left:10px;
+						img{ position: absolute; top:0; left:0; width:100%; }
+						h4{ line-height:20px; font-size:12px; font-weight:normal; position: absolute; bottom:0; left:0;}
+					}
+					.price{ font-size:16px; color:#FF3333; position: absolute; bottom:40px; left:10px;  }
+					.boot{ width:100%; height:30px; line-height:30px; border-top:1px solid #E6E6E6; background:#F7F7F7; position: absolute; bottom:0; left:0; text-indent:10px;
+						span{color:#FF6600; font-weight:bold;}
+						a{ width:25px; height:25px; display:inline-block; position:absolute; left:190px; top:3px;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+/* 列表页分页
+------------------------------------------------------------------- */
+.page_list{ margin-top:15px;
+	ul{ overflow:hidden; border: 1px solid #DDD; border-radius:3px; padding:0; margin:0; display:inline-block;
+		li{ float:left; border:none; height:30px;line-height:30px; border-right: 1px solid #DDD;
+			a{padding: 6px 12px; text-decoration:none;
+				&:hover{background:#EEEEEE;}
+			}
+			&.active{
+				a{ color: #FFF; cursor:default; background-color:#337AB7; border-color:#337AB7;}
+			}
+		}
+	}
+}

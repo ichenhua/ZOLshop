@@ -1,0 +1,76 @@
+{{include file="templates/zol/common/header_sm.html"}}
+
+		<!--购物车列表 开始-->
+		<div class="w960 home">
+			{{if value="!isset($_SESSION['user']['user_id'])"}}
+			<div class="login_state">
+				<p><i class="fa fa-warning"></i> 您还没有登录！登录后购物车的商品将保存到您账号中</p>
+				<button onclick="window.location.href='{{U('Home/User/login')}}'">立即登录</button>
+			</div>
+			{{endif}}
+			<div class="w960 cart_state">
+				<div class="left">
+					全部商品
+				</div>
+				<div class="right">
+					<p>总计（不含运费）：<span class="total_price">￥{{$price}}</span></p>
+					<a href="{{U('Home/Order/lists')}}">去结算</a>
+				</div>
+			</div>
+			<div class="w960 cart_list">
+				<table width="100%">
+					<tr>
+						<th><input type="checkbox">全选</th>
+						<th>所选商品</th>
+						<th>单价（元）</th>
+						<th style="text-align:center">数量</th>
+						<th style="text-align:center">小计（元）</th>
+						<th style="text-align:center">操作</th>
+					</tr>
+					
+					<?php foreach ($cart as $k => $v): ?>
+					<tr class="cart{{$k}}">
+						<td class="td-1">
+							<input type="checkbox" checked="checked">
+							<img src="{{__ROOT__}}/{{$v['goods']['thumb_pic']}}">
+						</td>
+						<td class="td-2">
+							<a href="{{U('Home/Goods/index',array('goods_id'=>$v['goods']['goods_id']))}}">{{$v['goods']['goods_name']}}</a>
+							<?php foreach ($v['attr'] as $key => $value): ?>
+								<p>{{$value['attr_name']}}：{{$value['goods_attr_value']}}</p>
+							<?php endforeach ?>
+						</td>
+						<td class="td-3">{{$v['goods_price']}}</td>
+						<td class="td-4">
+							<div class="num">
+								<i class="fa fa-minus"></i>
+								<input type="text" value="{{$v['buy_num']}}">
+								<i class="fa fa-plus"></i>
+							</div>
+						</td>
+						<td class="td-5"><b>{{$v['goods_price']*$v['buy_num']}}</b></td>
+						<td class="td-6"><a href="javascript:delCart({{$k}});">删除</a></td>
+					</tr>	
+					<?php endforeach ?>
+				</table>
+				<div class="total">
+					<input type="checkbox">
+					<a href="" class="del">删除选中的商品</a>
+					<p>总价：<span class="total_price">￥{{$price}}</span></p>
+					<a href="{{U('Home/Order/lists')}}" class="btn">去结算</a>
+				</div>
+			</div>
+		</div>
+		<!--购物车列表 开始-->
+
+		<script>
+		function delCart(id) {
+			$.post('{{U('Home/Goods/delCart')}}', {id:id}, function(data) {
+				alert('移除商品成功！！');
+				$('.cart'+id).remove();
+				$('.total_price').html('￥'+data.total_price);
+			},'json');
+		}
+		</script>
+
+{{include file="templates/zol/common/footer_sm.html"}}

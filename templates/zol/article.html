@@ -1,0 +1,16 @@
+{{include file="templates/zol/common/header_sm.html"}}
+
+		<!--文章页面 开始-->
+		<div class="w960 home">
+			
+			<div class="article">
+				<h1>{{$article['article_title']}}</h1>
+				<p class="info">作者：{{$article['article_author']}} | 发布时间：{{date('Y/m/d H:i',$article['create_at'])}}</p>
+				<div class="content">
+					{{$article['article_content']}}
+				</div>
+			</div>
+		</div>
+{{include file="templates/zol/common/footer_sm.html"}}
+
+

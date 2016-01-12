@@ -1,0 +1,22 @@
+				<div class="info">
+					<div class="user">
+						<div class="avatar"><img src="{{__ROOT__}}/templates/zol/style/img/avatar.jpg"></div>
+						<div class="intro">
+							<h2>晚上好，{{$user['username']}}</h2>
+							<p>欢迎登录ZOL商城，与其在别处仰望，不如在这里并肩</p>
+							<ul>
+								<li>用户名：<span>{{$user['username']}}</span></li>
+								<li>最后登陆IP：<span>{{$user['login_ip']}}</span></li>
+								<li>登陆时间：<span>{{date('Y/m/d H:i',$user['login_in'])}}</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="fast_nav">
+					<ul>
+						<li><a href=""><i class="fa fa-road"></i> 登录日志</a></li>
+						<li><a href=""><i class="fa fa-cog"></i> 个人资料</a></li>
+						<li><a href=""><i class="fa fa-lock"></i> 修改密码</a></li>
+						<li><a href=""><i class="fa fa-paper-plane"></i> 收货地址</a></li>
+					</ul>
+				</div>

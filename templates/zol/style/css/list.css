@@ -1,0 +1,234 @@
+.main {
+  overflow: hidden;
+}
+.main .right {
+  width: 960px;
+  float: right;
+}
+.main .right .category_nav {
+  width: 958px;
+  border: 1px solid #E6E6E6;
+  position: relative;
+}
+.main .right .category_nav h3 {
+  height: 32px;
+  line-height: 32px;
+  font-weight: normal;
+  text-indent: 10px;
+  background: #F7F7F7;
+  color: #333;
+}
+.main .right .category_nav ul {
+  padding: 0 15px;
+}
+.main .right .category_nav ul li {
+  line-height: 35px;
+  overflow: hidden;
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+}
+.main .right .category_nav ul li dl dt {
+  width: 100px;
+  margin-right: 10px;
+  text-align: right;
+  float: left;
+}
+.main .right .category_nav ul li dl dd {
+  width: 760px;
+  margin-left: 5px;
+  float: left;
+}
+.main .right .category_nav ul li dl dd a {
+  color: #134BA0;
+  margin-right: 32px;
+}
+.main .right .category_nav ul li dl dd a:hover,
+.main .right .category_nav ul li dl dd a.active {
+  color: #CC0000;
+  text-decoration: underline;
+}
+.main .right .category_nav ul li a.more {
+  color: #666;
+  position: absolute;
+  right: 0;
+}
+.main .right .category_nav ul li a.more:hover {
+  color: #CC0000;
+  text-decoration: underline;
+}
+.main .right .category_nav .open {
+  width: 960px;
+  height: 5px;
+  background: #F7F7F7;
+  position: absolute;
+  bottom: -6px;
+  left: -1px;
+}
+.main .right .category_nav .open a {
+  width: 130px;
+  height: 25px;
+  background: #F7F7F7;
+  text-align: center;
+  display: inline-block;
+  line-height: 25px;
+  position: absolute;
+  left: 50%;
+  margin-left: -75px;
+}
+.main .right .toolbar {
+  width: 958px;
+  height: 40px;
+  border: 1px solid #E6E6E6;
+  margin-top: 40px;
+  background: #F5F5F5;
+  position: relative;
+}
+.main .right .toolbar ul li {
+  display: inline-block;
+}
+.main .right .toolbar ul li a {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  float: left;
+  border-right: 1px solid #E6E6E6;
+  display: inline-block;
+}
+.main .right .toolbar ul li a:hover,
+.main .right .toolbar ul li a.active {
+  background: #FFF;
+}
+.main .right .toolbar ul li.pull_right a {
+  border-left: 1px solid #E6E6E6;
+  border-right: 0;
+}
+.main .right .toolbar ul li.pull_right a:hover,
+.main .right .toolbar ul li.pull_right a.active {
+  color: #CC0000;
+  background: #FFF;
+}
+.main .right .toolbar ul li.pull_right .page {
+  width: 130px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  border-left: 1px solid #E6E6E6;
+}
+.main .right .toolbar ul li.pull_right .page span {
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border: 1px solid #E6E6E6;
+  display: inline-block;
+  background: #FFF;
+  cursor: pointer;
+}
+.main .right .toolbar ul li.pull_right .page span:hover {
+  color: #CC0000;
+}
+.main .right .list {
+  width: 960px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.main .right .list ul {
+  width: 990px;
+}
+.main .right .list ul li {
+  width: 223px;
+  height: 345px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #E6E6E6;
+  float: left;
+  position: relative;
+}
+.main .right .list ul li:hover {
+  border: 1px solid #CC0000;
+}
+.main .right .list ul li a {
+  width: 200px;
+  height: 260px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.main .right .list ul li a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.main .right .list ul li a h4 {
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: normal;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.main .right .list ul li .price {
+  font-size: 16px;
+  color: #FF3333;
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+}
+.main .right .list ul li .boot {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  border-top: 1px solid #E6E6E6;
+  background: #F7F7F7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-indent: 10px;
+}
+.main .right .list ul li .boot span {
+  color: #FF6600;
+  font-weight: bold;
+}
+.main .right .list ul li .boot a {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: absolute;
+  left: 190px;
+  top: 3px;
+}
+/* 列表页分页
+------------------------------------------------------------------- */
+.page_list {
+  margin-top: 15px;
+}
+.page_list ul {
+  overflow: hidden;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+.page_list ul li {
+  float: left;
+  border: none;
+  height: 30px;
+  line-height: 30px;
+  border-right: 1px solid #DDD;
+}
+.page_list ul li a {
+  padding: 6px 12px;
+  text-decoration: none;
+}
+.page_list ul li a:hover {
+  background: #EEEEEE;
+}
+.page_list ul li.active a {
+  color: #FFF;
+  cursor: default;
+  background-color: #337AB7;
+  border-color: #337AB7;
+}

@@ -1,0 +1,43 @@
+//支付成功提示页面
+.ok{border:1px solid #E9E9E9; height:160px;
+	ul{
+		li{ float:left;
+			&.icon{ width:170px; height:160px; background:#F8F8F8; text-align:center; line-height:125px;
+				i{color:#8DC842; font-size:80px; margin-top:30px;}
+			}
+			&.message{ padding:15px; height:130px; width:730px;
+				h2{font-size:20px; font-weight:normal; color:#333;}
+				p{ line-height:20px;
+					&.tips{font-size:14px; margin:5px 0 15px 0;}
+				}
+			}
+		}
+	}
+}
+
+.pay{margin-top:20px;
+	h3{font-size:18px; font-weight:normal; color:#333; line-height:40px;}
+	table{ border-collapse: collapse;
+		tr{ border:1px solid #E9E9E9; 
+			td{
+				&.title{ width:130px; padding:20px;font-size:16px;background:#F8F8F8; font-weight:bold;
+					p{ font-size:12px; line-height:18px; font-weight:normal; margin-top:10px;}
+				}
+				&.content{ width:760px; padding:20px; display:inline-block; 
+					ul{
+						li{width:180px; height:60px; margin:5px 10px 5px 0; float:left; position: relative;
+							input{position: absolute; top:25px; left:2px;}
+							img{ width:166px; height:45px; position: absolute; top:10px; left:18px;}
+						}
+					}
+				}
+			}
+		}
+	}
+	.sub{margin:30px 0; text-align:right;
+		a{width:160px; height:40px; line-height:40px; text-align:center; border-radius:3px; display:inline-block; background:#DF3030; color:#FFF; font-size:16px; border:1px solid #DF3030;
+			&:hover{background:#C61F1F;}
+			&.edit{background:#F8F8F8; color:#666; border:1px solid #E6E6E6; margin-right:10px; }
+		}
+	}
+}

@@ -1,0 +1,51 @@
+//注册页面
+.home{
+	.reg{ width:958px; border:1px solid #E6E6E6; overflow:hidden;
+		h3{height:50px; line-height:50px; background:#FAFAFA; color:#666; text-indent:30px;}
+		.reg_form{width:500px; margin:30px; font-size:14px; float:left; 
+			dl{ margin-bottom: 10px; float:left;
+				dt{ width:100px; line-height:30px; text-align:right; float:left; color:#333;
+					span{color:#CC0000; position: relative; top:2px;}
+				}
+				dd{ width:400px; float:right;
+					input{ width:280px; height:20px; padding:5px; color:#777; border:1px solid #E6E6E6; float:left;
+						&[type='checkbox']{ margin:8px 10px 0 0; height:10px; width:10px;}
+						&[type='submit']{width:290px; height:40px; line-height:20px; font-size:16px; font-weight:bold; color:#FFF; background:#DD2F2F; border:0; border-radius:3px; cursor: pointer;}
+					}
+					p{ font-size:12px; line-height:30px; width:290px; float:left; color:#888;
+						a{ color:#134BA0;
+							&:hover{text-decoration:underline; color:#CC0000;}
+						}
+						&.has{ font-size:14px; line-height:35px;
+							a{ color:#CE1A1B; padding:2px 10px;
+								&:hover{background:#CE1A1B; color:#FFF; text-decoration:none;}
+							}
+						}
+					}
+				}
+				&.th{
+					dd{
+						input{width:170px; margin-right:10px; }
+						img{width:100px; height:30px; display:inline-block; float:left; border:1px solid #E6E6E6;}
+						button{width:100px; height:30px; line-height:25px; display:inline-block; float:left; border:1px solid #E6E6E6; cursor: pointer; color:#666;}
+					}
+				}
+			}
+		}
+		.fast_login{ width:170px; float:right; padding:0 30px; padding-top:0; margin:30px; border-left:1px solid #E6E6E6;
+			p{margin-bottom:10px;
+				a{ color:#134BA0; margin-left:5px;
+					&:hover{text-decoration:underline; color:#CC0000;}
+				}
+			}
+			.fast-reg-list{
+				a{width:170px; height:36px; display:inline-block; float: left; text-indent:-999px; margin-top:15px; background:url('../img/reg-bg.png');
+					&.sina{background-position:0 0;}
+					&.qq{background-position:0 -37px;}
+					&.alipay{background-position:0 -74px;}
+					&.baidu{background-position:0 -111px;}
+				}
+			}
+		}
+	}
+}

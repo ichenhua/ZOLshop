@@ -1,0 +1,48 @@
+.address{ margin:10px 0;
+		table{ border-collapse: collapse; border:none;
+			tr{
+				td{vertical-align:middle; border:1px solid #E3E3E3;
+					&.title{text-align:center; width:125px; color:#333; font-size:14px;}
+					&.content{ width:700px;
+						ul{
+							li{height:30px; margin-bottom:5px; position: relative;
+								&:hover,&.active{background:#FFF5D6;}
+								input[type='radio']{position: absolute; top:8px; left:10px;}
+								p{position: absolute; top:0; left:40px; line-height:30px;
+									em{ font-style:normal; color:#E54346; font-weight:bold;}
+									span{font-weight:bold;}
+								}
+								.operate{position: absolute; top:; right:0; line-height:30px;
+									a{color:#134BB4; padding:0 10px;}
+								}
+							}
+						}
+					}
+					.add{ width:700px; height:310px; background:#FFF5D6;
+						.info{ height:30px; position: relative;
+							input[type='radio']{position: absolute; top:8px; left:10px;}
+							p{position: absolute; top:0; left:40px; line-height:30px;
+								em{ font-style:normal; color:#E54346; font-weight:bold;}
+								span{font-weight:bold;}
+							}
+						}
+						.form_content{ padding:10px 30px;
+							dl{ line-height:26px; margin-bottom:10px;
+								dt{ width:60px; line-height:26px; display:inline-block; position: relative; padding-left:20px;
+									span{margin:0 5px; color:red; position: absolute; top:2px; left:0;}
+								}
+								dd{ margin-left:5px; display:inline-block;
+									select{ width:100px; height:25px; margin-right:10px; border:1px solid #E3E3E3;}
+									input[type="text"]{width:120px; height:15px; padding:5px; border:1px solid #E3E3E3; }
+									input[type="checkbox"]{position: relative; top:2px; }
+									input[type="submit"]{width:120px; height:30px; border-radius:3px; color:#FFF; background:#DF3030;
+										&:hover{background:#C61F1F;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}

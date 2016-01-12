@@ -1,0 +1,294 @@
+{{include file="templates/zol/common/header_sm.html"}}
+		
+		<!--购物车列表 开始-->
+		<div class="w960 home">
+			<div class="address">
+				<table>
+					<tr>
+						<td class="title">收货人信息</td>
+						<td class="content">
+							<ul>
+
+							<?php foreach ($addressData as $k => $v): ?>
+								<li
+								{{if value="$v['is_default']"}}
+								class="active"
+								{{endif}}
+								 >
+									<input type="radio" name="add_ev" value="{{$v['add_id']}}" onclick="editValue(this)" 
+									{{if value="$v['is_default']"}}
+									checked
+									{{endif}}
+									/>
+									<p>
+									{{if value="$v['is_default']"}}
+									<em>[默认]</em> 
+									{{endif}}
+									<span>{{$v['add_name']}}</span> 
+									{{$v['add_province']}} {{$v['add_city']}} {{$v['add_detail']}} {{$v['add_phone']}} {{$v['add_tel']}}
+									</p>
+									<div class="operate">
+                                        <a href="javascript:;" onclick="editBox(this,{{$v['add_id']}})">编辑</a>
+                                        <a href="javascript:;" onclick="delAdd(this,{{$v['add_id']}})">删除</a>
+                                    </div>
+								</li>
+							<?php endforeach ?>
+
+<!-- 								<li>
+									<input type="radio" name="add_ev"/>
+									<p><span>赵树伟</span> 上海 静安区 静安寺223 13861312480</p>
+									<div class="operate">
+                                        <a href="">编辑</a>
+                                        <a href="">删除</a>
+                                    </div>
+								</li> -->
+
+								<li>
+									<input type="radio" name="add_ev" value="0" onclick="addBox(this)" />
+									<p>添加新地址（最多可添加10个地址,您还可以添加9个地址）</p>
+								</li>
+	
+								<!--地址修改与编辑 开始-->
+								<form action="" id="address">
+								<div class="add">
+									<div class="form_content">
+										<input type="hidden" name="add_id" value="0">
+										<dl>
+											<dt><span>*</span>收货人：</dt>
+											<dd><input type="text" name="add_name"></dd>
+										</dl>
+										<dl>
+											<dt><span>*</span>所在地区：</dt>
+											<dd>
+												<script type="text/javascript" src="{{__ROOT__}}/Public/org/citySelect.js"></script>
+												<select name="add_province" id="ddlProvince" onchange="selectMoreCity(this)">
+												</select>
+												<select name="add_city" id="ddlCity">
+													<option selected value="">城市</option>
+												</select>
+												<script type="text/javascript">
+												    //BindProvince();//只初始化省份
+												   	BindCity("城市");//初始化，并选中洛阳市和洛阳市所在的省
+												</script>
+											</dd>
+										</dl>
+										<dl>
+											<dt><span>*</span>详细地址：</dt>
+											<dd><input type="text" name="add_detail" style="width:350px;"></dd>
+										</dl>
+										<dl>
+											<dt><span>*</span>手机号码：</dt>
+											<dd>
+												<input name="add_phone" type="text">
+											</dd>
+										</dl>
+										<dl>
+											<dt>固定电话：</dt>
+											<dd>
+												<input name="add_tel" type="text"> 手机号码和固定电话请至少输入一个
+											</dd>
+										</dl>
+										<dl>
+											<dt></dt>
+											<dd>
+												<input type="checkbox" name="is_default" value="1"> 设置为默认地址
+											</dd>
+										</dl>
+										<dl>
+											<dt></dt>
+											<dd>
+												<input type="button" onclick="postAddress(this)" value="确认收货地址">
+											</dd>
+										</dl>
+									</div>
+								</div>
+								</form>
+								<!--地址修改与编辑 结束-->
+							</ul>
+							
+
+							<script>
+								//修改和添加收货地址
+								function postAddress(obj){
+									var address = $('#address').serialize();
+									$.post('{{U('Home/Address/save')}}',address, function(data) {
+										if(data.code==0){
+											$(obj).parents('.add').find('[name=add_id]').val(data.add_id);
+											alert(data.message);
+										}else{
+											alert(data.message);
+										}
+									},'json');
+								}
+
+								//初始化选中收货地址
+								$(function(){
+									$('#address').hide(); //编辑框默认不显示
+									var add_id = $('.content').find('.active').find('[name="add_ev"]').val();
+									$('[name="add_id"]').val(add_id);
+								});
+
+								//点击编辑显示编辑框
+								function editBox(obj,add_id){
+									$('#address').show(); //编辑框显示
+									// 文本框赋初始值
+									$.post('{{U('Home/Address/getOne')}}', {add_id:add_id}, function(data){
+										$('#address').find('[name="add_name"]').val(data.add_name);
+										$('#address').find('[name="add_detail"]').val(data.add_detail);
+										$('#address').find('[name="add_phone"]').val(data.add_phone);
+										$('#address').find('[name="add_tel"]').val(data.add_tel);
+										$('#address').find('[name="add_province"]').val(data.add_province);
+										$('#address').find('[name="add_city"]').val(data.add_city);
+										if(data.is_default=='1'){
+											$('#address').find('[name="is_default"]').val(1);
+											$('#address').find('[name="is_default"]').prop("checked",true);
+										}else{
+											$('#address').find('[name="is_default"]').val(0);
+											$('#address').find('[name="is_default"]').prop("checked",false); 
+										}
+									},'json');
+
+									//追加赋值等操作
+									$(obj).parents('li').eq(0).addClass('active').siblings('li').removeClass('active');
+									$('[name="add_id"]').val($(obj).parents('li').eq(0).find('[name="add_ev"]').val());
+									$('#address').insertAfter($(obj).parents('li').eq(0));
+								}
+
+								//点击添加地址显示框
+								function addBox(obj){
+									$('#address').show(); //编辑框显示
+									$(obj).parents('li').eq(0).addClass('active').siblings('li').removeClass('active');
+									$('[name="add_id"]').val($(obj).parents('li').eq(0).find('[name="add_ev"]').val());
+									$('#address').insertAfter($(obj).parents('li').eq(0));
+								}
+
+								//点击单选按钮改变属性框的值
+								function editValue(obj){
+									$('#address').hide(); //编辑框隐藏
+									$('[name="add_id"]').val($(obj).val());
+									$(obj).parents('li').eq(0).addClass('active').siblings('li').removeClass('active');
+								}
+
+								//点击单选按钮改变属性框的值
+								function delAdd(obj,add_id){
+									$.post('{{U('Home/Address/delAdd')}}', {add_id:add_id}, function(data){
+										if(data.code==0){
+											$(obj).parents('li').eq(0).remove();
+										}
+									});
+								}
+							</script>
+							<!--
+							收货地址修改详情
+							1、点击编辑地址弹出修改框，将当前行的add_ev值传给弹出框的add_id隐藏域
+							2、编辑时，将弹出框移动到当前行后面
+							3、编辑时，异步获取相关参数填充div框，显示包含数据的div框
+							4、点击已存在的收货地址列表按钮，改变add_id隐藏域add_id的值
+							5、编辑收货地址完成后，返回当前修改字段的id，赋值给当前输入框
+							6、添加收货地址完成后，返回新添加的地址id作为单选框的值，供订单form使用
+							-->
+
+
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<form action="{{U('Home/Order/add')}}" method="post">
+			<div class="w960 cart_state">
+				<div class="left">
+					全部商品
+				</div>
+<!-- 				<div class="right">
+					<p>总计（不含运费）：<span>¥22295</span></p>
+					<a href="">去结算</a>
+				</div> -->
+			</div>
+			<div class="w960 cart_list">
+				<table width="100%">
+					<tr>
+						<th><input type="checkbox">全选</th>
+						<th>所选商品</th>
+						<th>单价（元）</th>
+						<th style="text-align:center">数量</th>
+						<th style="text-align:center">小计（元）</th>
+						<th style="text-align:center">操作</th>
+					</tr>
+					
+					<?php foreach ($cart as $k => $v): ?>
+					<tr class="cart_box">
+						<td class="td-1">
+							<input type="checkbox" value="{{$k}}" name="cart[]" checked>
+							<img src="{{__ROOT__}}/{{$v['goods']['thumb_pic']}}">
+						</td>
+						<td class="td-2">
+							<a href="{{U('Home/Goods/index',array('goods_id'=>$v['goods']['goods_id']))}}">{{$v['goods']['goods_name']}}</a>
+							<?php foreach ($v['attr'] as $key => $value): ?>
+								<p>{{$value['attr_name']}}：{{$value['goods_attr_value']}}</p>
+							<?php endforeach ?>
+						</td>
+						<td class="td-3">{{$v['goods_price']}}</td>
+						<td class="td-4">
+							{{$v['buy_num']}}
+						</td>
+						<td class="td-5"><b>{{$v['goods_price']*$v['buy_num']}}</b></td>
+						<td class="td-6"><a href="javascript:delCart({{$k}});">删除</a></td>
+					</tr>	
+					<?php endforeach ?>
+
+				</table>
+				<div class="remark">
+					<table>
+						<tr>
+							<td class="left">订单备注</td>
+							<td class="content">
+								<textarea name="remark"></textarea>
+								<p>0/200</p>
+							</td>
+							<td class="right">
+								<dl>
+									<dt>商品总价：</dt>
+									<dd class="total_price">¥{{$price}}</dd>
+								</dl>
+								<dl>
+									<dt>运费：</dt>
+									<dd>¥0</dd>
+								</dl>
+								<dl>
+									<dt>订单总计：</dt>
+									<dd><span class="total_price">¥{{$price}}</span></dd>
+								</dl>
+							</td>
+						</tr>
+					</table>
+					<div class="sub">
+						<input type="hidden" name="add_id">
+						<input type="submit" value="提交订单" onclick="add()">
+					</div>
+				</div>
+				</form>
+
+			</div>
+		</div>
+		<!--购物车列表 结束-->
+
+		<!--
+		订单提交说明
+		1、订单提交即按照当前时间戳加3位随机数生成唯一的订单号
+		2、将订单号作为参数传给商品列表模型，将选中的商品信息逐条插入到商品列表数据库，并返回总价格
+		3、将返回的总价格和订单号插入到商品表
+		4、读取数据时，用订单号将商品表和商品列表关联
+		5、订单提交成功后，删除购物车session里的对应的数据
+		-->
+
+		<script>
+		function delCart(id) {
+			$.post('{{U('Home/Goods/delCart')}}', {id:id}, function(data) {
+				alert('移除商品成功！！');
+				$('.cart'+id).remove();
+				$('.total_price').html('￥'+data.total_price);
+			},'json');
+		}
+		</script>
+
+{{include file="templates/zol/common/footer_sm.html"}}

@@ -1,0 +1,43 @@
+.set dl {
+  float: left;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.set dl dt {
+  width: 100px;
+  display: inline-block;
+  font-size: 14px;
+  text-align: right;
+}
+.set dl dd {
+  width: 500px;
+  display: inline-block;
+}
+.set dl dd input[type='text'] {
+  padding: 5px;
+  border: 1px solid #E6E6E6;
+}
+.set dl dd input[type='submit'] {
+  width: 125px;
+  height: 35px;
+  border-radius: 3px;
+  background: #CC0000;
+  color: #FFF;
+}
+.set dl dd select {
+  width: 80px;
+  border: 1px solid #E6E6E6;
+}
+.set dl dd button {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  background: #E6E6E6;
+  color: #333;
+  border-radius: 3px;
+}
+.set dl dd img {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}

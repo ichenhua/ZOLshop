@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{$goodsData['goods_name']}} - ZOL商城(ZOL.COM)</title>
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/main.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/common.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/goods.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/font/css/font-awesome.min.css">
+        <script type="text/javascript" src="{{__ROOT__}}/templates/zol/style/js/jquery-1.7.2.min.js"></script>
+        <script>
+        	var goods_id = {{Q('goods_id')}}; //商品id
+        	var o_price={{$goodsData['shop_price']}}; //原始参考价
+        </script>
+        <script type="text/javascript" src="{{__ROOT__}}/templates/zol/style/js/main.js"></script>
+        <script type="text/javascript" src="{{__ROOT__}}/App/Home/Javascript/goods.js"></script>
+    </head>
+    <body>
+    	{{include file="templates/zol/common/header.html"}}
+		
+		<!--整站通用导航菜单 开始-->
+		<div class="w100pre navbar">
+			<ul class="w1200">
+				<li class="nav"><a href="">全部商品分类</a><i class="fa fa-chevron-down"></i>
+					<div class="combobox">
+						<ul>
+							<?php foreach ($cateData as $k => $v): ?>
+								<li>{{$v['cate_name']}}
+									<div class="ext">
+										<?php foreach ($v['_data'] as $m => $n): ?>
+										<dl>
+											<dt>{{$n['cate_name']}}</dt>
+											<dd>
+												<?php foreach ($n['_data'] as $p => $q): ?>
+												<a href="{{U('Home/Lists/index',array('cate_id'=>$q['cate_id']))}}">{{$q['cate_name']}}</a>
+												<?php endforeach ?>
+											</dd>
+										</dl>
+										<?php endforeach ?>
+									</div>
+								</li>
+							<?php endforeach ?>
+						</ul>
+					</div>
+				</li>
+				<li><a href="{{__ROOT__}}">首页</a></li>
+				<li><a href="{{U('Home/Lists/Index',array('cate_id'=>12))}}">分类页</a></li>
+				<li><a href="{{U('Home/Goods/Index',array('goods_id'=>1))}}">详情页</a></li>
+				<li><a href="http://chenhua.wang" target="_blank">陈华博客</a></li>
+				<li><a href="http://www.wysls.com" target="_blank">大学生演讲网</a></li>
+			</ul>
+		</div>
+		<!--整站通用导航菜单 结束-->
+
+		<!--当前位置 开始-->
+		<div class="w1200 location">
+			<i class="fa fa-home"></i> <a href="{{__ROOT__}}">zol商城</a> > {{$goodsData['goods_name']}}
+		</div>
+		<!--当前位置 结束-->
+
+		<!--商品详情 开始-->
+		<div class="w1200 detail">
+			<div class="left">
+				<div class="img">
+					<img src="{{__ROOT__}}/{{$picsData[0]['pics_mid']}}">
+				</div>
+				<div class="bigimg">
+					<img src="{{__ROOT__}}/{{$picsData[0]['pics_big']}}">
+				</div>
+				<div class="thumb">
+					<?php foreach ($picsData as $k => $v): ?>
+						<img src="{{__ROOT__}}/{{$v['pics_mid']}}">
+					<?php endforeach ?>
+				</div>
+				<div class="share">
+					<a href=""><i class="fa fa-star"></i> 收藏宝贝</a>
+					<a href=""><i class="fa fa-share-alt"></i> 分享</a>
+				</div>
+			</div>
+			<div class="middle">
+				<h1>{{$goodsData['goods_name']}}</h1>
+				<p>{{$goodsData['discription']}}</p>
+				<div class="price">
+					<dl>
+						<dt>市场价：</dt>
+						<!-- <dd> <em>满减</em> 消费满 1999.00 元，减 40.00 元</dd> -->
+						<dd>{{$goodsData['shop_price']}}</dd>
+					</dl>
+					<dl>
+						<dt>促销价：</dt>
+						<dd><span>¥</span> <strong class="goods_price">{{$goodsData['goods_price']}}</strong></dd>
+					</dl>
+				</div>
+				<div class="info">
+					<ul class="sales">
+						<li>购买评价 <span>43</span> </li>
+						<li>成交记录 <span>56</span> </li>
+					</ul>
+					<dl class="service">
+						<dt>配送：</dt>
+						<dd><b>顺丰包邮</b></dd>
+						<dt>服务保障：</dt>
+						<dd>
+							<img src="http://icon.zol-img.com.cn/newshop/server/1.png"/>支持七天无理由退换货
+						</dd>
+						<dt>售后：</dt>
+						<dd>由<a href="#">华晨数码官方旗舰店</a>发货并负责售后服务</dd>
+					</dl>
+
+					<?php foreach ($im_attr as $k => $v): ?>
+						<dl class="attr">
+							<dt>{{$v['attr_name']}}</dt>
+							<dd>
+								<ul>
+									<?php foreach ($goods_attr as $m => $n): ?>
+										{{if value="($n['attr_id']==$v['attr_id'])"}}
+											<li onclick="setActive(this);initOrder()">{{$n['goods_attr_value']}}
+											<input type="hidden" name="add_price" value="{{$n['goods_add_price']}}">
+											<input type="hidden" name="goods_attr_id" value="{{$n['goods_attr_id']}}">
+											</li>
+										{{endif}}
+									<?php endforeach ?>
+								</ul>
+							</dd>
+						</dl>
+					<?php endforeach ?>
+					
+<!-- 					<dl class="attr">
+						<dt>套装：</dt>
+						<dd>
+							<ul>
+								<li class="active">官方标配</li>
+								<li>套装一</li>
+								<li>套装二</li>
+								<li>套装三</li>
+								<li>套装四</li>
+							</ul>
+							<p>64G高速卡+卡色多膜MCUV镜+单反包+伟峰6663A脚架+读卡器+清洁套装+贴膜【含发票顺丰包邮】</p>
+						</dd>
+					</dl> -->
+					<dl class="num">
+						<dt>购买数量：</dt>
+						<dd>
+							<i class="fa fa-minus"></i>
+							<input type="text" value="1" class="buy_num">
+							<i class="fa fa-plus"></i>
+							<p>件（库存<span class="goods_stock">0</span>件） <span class="notice red" style="display:none">商品库存不足！！！</span></p>
+						</dd>
+					</dl>
+					<div class="deal">
+						<a href="javascript:;" class="buy">立即购买</a>
+						<a href="javascript:;" class="cart">加入购物车</a>
+					</div>
+				</div>
+				
+			</div>
+			<div class="right">
+				<div class="shop">
+					<h3><img src="{{__ROOT__}}/templates/zol/style/img/pro_shop.jpg"></h3>
+					<div class="info">
+						<h3>zol商城</h3>
+						<p>掌柜：chuanxiaozhi </p>
+						<p>工作：周一至周五</p>
+						<p>时间：8:00 - 18:00 </p>
+						<ul>
+							<li class="kefu">
+								<a href=""><img src='{{__ROOT__}}/templates/zol/style/img/chat.gif'></a>
+								<a href=""><img src='{{__ROOT__}}/templates/zol/style/img/chat.gif'></a>
+							</li>
+						</ul>
+						<dl>
+							<dt>相关推荐</dt>
+							<?php $i = 0;
+							foreach ($new as $k => $v): 
+							$i++;
+							if($i<5){
+							?>
+								<dd>
+									<a href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}">
+										<img src="{{__ROOT__}}/{{$v['thumb_pic']}}">
+										<p>￥{{$v['goods_price']}}</p>
+									</a>
+								</dd>
+							<?php
+							}; 
+							endforeach ?>
+						</dl>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!--商品详情 结束-->
+
+
+		<!--商品主体部分 开始-->
+		<div class="w1200 main">
+			{{include file="templates/zol/common/left.html"}}
+			<!--right 开始-->
+			<div class="right">
+				<div class="goods_bar">
+					<ul>
+						<li class="active"><a href="">商品详情</a></li>
+						<li><a href="">累计评价 <span>244</span></a></li>
+						<li><a href="">月成交记录 <span>625件</span></a></li>
+						<li class="stress"><a href="">留言咨询</a></li>
+						<li><a href="">同类宝贝</a></li>
+					</ul>
+				</div>
+				<div class="goods">
+					<div class="description">
+						<p><b>注意事项：</b></p>
+						<p>1、本商城商品信息为测试数据，非实际在售商品，各位访客请勿对比参考或购买;</p>
+						<p>2、以下描述可能与商品信息无关，也可能有重复内容，仅供填充版面使用;</p>
+						<p>3、由于项目时间仓促，尚未完善商品评价和购买数量模块，以上选项卡仅为整体版面效果保留。</p>
+						<p>4、本商城作者：陈华，Email：276004561@qq.com</p>
+						<p>======================================================================</p>
+						{{$goodsData['content']}}
+					</div>
+					<div class="sidebar">
+						<div class="quick_menu">
+							<ul>
+								<li class="active"><a href="#">商品介绍</a></li>
+								<li><a href="">先行赔付</a></li>
+								<li><a href="">24小时发货</a></li>
+								<li><a href="">先行赔付</a></li>
+								<li><a href="">24小时发货</a></li>
+								<li><a href="">先行赔付</a></li>
+								<li><a href="">24小时发货</a></li>
+								<li><a href="">先行赔付</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--right 结束-->
+		</div>
+		<!--商品主体部分 结束-->
+
+		
+{{include file="templates/zol/common/footer.html"}}
+
+		<!--宝贝跟随导航 开始-->
+		<div class="hook">
+			<div class="w1200 hook_box">
+				<div class="hook_left"></div>
+				<div class="hook_right">
+					<a href=""><i class="fa fa-cart-plus fa-lg"></i> 立即购买</a>
+				</div>
+			</div>
+		</div>
+		<!--宝贝跟随导航 结束-->
+
+		<!--添加购物车提示框 开始-->
+		<div class="addcart" style="display:none;">
+			<p class="icon"></p>
+			<h4 class="title">商品已成功添加至购物车</h4>
+			<p class="message">购物车共有<span class="total_num">3</span>件商品，参考总价<span class="total_price">16295</span>元</p>
+			<a class="btn" href="{{U('Home/Goods/cart')}}">去购物车结算</a>
+			<a href="javascript:;" class="cart_colse">继续购物</a>
+			<i class="fa fa-close cart_colse"></i>
+		</div>
+		<!--添加购物车提示框 结束-->
+    </body>
+</html>

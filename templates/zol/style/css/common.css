@@ -1,0 +1,466 @@
+.top {
+  height: 30px;
+  line-height: 30px;
+  background: #F5F5F5;
+  border-bottom: 1px solid #E6E6E6;
+}
+.top .top_nav {
+  color: #D9CCD9;
+  font-size: 10px;
+}
+.top .top_nav a {
+  font-size: 12px;
+  margin: 0 8px;
+}
+.top .top_nav a:hover {
+  text-decoration: underline;
+}
+.top ul.top_login li {
+  float: left;
+  padding-left: 20px;
+}
+.top ul.top_login li a {
+  color: #134BA0;
+}
+.top ul.top_login li a:hover {
+  text-decoration: underline;
+}
+.top ul.top_login li a.cart {
+  color: #666;
+}
+.top ul.top_login li span {
+  color: #C40000;
+}
+.banner {
+  height: 120px;
+  position: relative;
+}
+.banner .logo {
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+.banner .title {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+  font-size: 14px;
+  position: absolute;
+  left: 190px;
+  top: 30px;
+  border-left: 1px solid #E6E6E6;
+}
+.banner .search {
+  width: 535px;
+  height: 65px;
+  position: absolute;
+  left: 415px;
+  top: 35px;
+}
+.banner .search .text {
+  border: 2px solid #C40000;
+  height: 32px;
+  position: relative;
+}
+.banner .search .text input {
+  width: 435px;
+  height: 22px;
+  color: #666;
+  padding: 5px;
+}
+.banner .search .text button {
+  width: 88px;
+  height: 32px;
+  line-height: 32px;
+  background: #C40000;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #FFF;
+  font-size: 16px;
+  cursor: pointer;
+}
+.banner .search .word {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 28px;
+  line-height: 28px;
+}
+.banner .search .word a {
+  margin-right: 10px;
+}
+.banner .mark {
+  position: absolute;
+  right: 0;
+  top: 25px;
+}
+.banner .mark img {
+  width: 180px;
+  height: 60px;
+}
+.navbar {
+  height: 40px;
+  line-height: 40px;
+  background: #CC0000;
+}
+.navbar ul li {
+  font-size: 14px;
+  float: left;
+}
+.navbar ul li a {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  display: inline-block;
+  color: #FFF;
+}
+.navbar ul li a:hover {
+  background: #AB0101;
+}
+.navbar ul li.nav {
+  position: relative;
+}
+.navbar ul li.nav a {
+  text-align: center;
+  width: 230px;
+  padding: 0;
+  background: #AB0101;
+}
+.navbar ul li.nav i {
+  font-weight: normal;
+  font-size: 12px;
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  color: #FFF;
+}
+.navbar ul li.nav .combobox {
+  width: 228px;
+  border: 1px solid #EEE;
+  border-top: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 20;
+  background: #FFF;
+  display: none;
+}
+.navbar ul li.nav .combobox ul li {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #E6E6E6;
+  background: #FAFAFA;
+  text-align: center;
+}
+.navbar ul li.nav .combobox ul li a {
+  color: #333;
+  font-size: 14px;
+  line-height: 45px;
+  padding-right: 5px;
+  width: auto;
+  background: transparent;
+}
+.navbar ul li.nav .combobox ul li a:hover {
+  text-decoration: underline;
+}
+.navbar ul li.nav .combobox ul li .ext {
+  width: 690px;
+  height: 348px;
+  background: #FFF;
+  position: absolute;
+  top: 0;
+  left: 229px;
+  z-index: 100;
+  border-right: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+  padding: 10px 30px;
+  display: none;
+}
+.navbar ul li.nav .combobox ul li .ext dl {
+  padding: 10px 0;
+  border-bottom: 1px solid #EEE;
+  overflow: hidden;
+}
+.navbar ul li.nav .combobox ul li .ext dl dt {
+  display: inline-block;
+  width: 130px;
+  float: left;
+  color: #444;
+}
+.navbar ul li.nav .combobox ul li .ext dl dd {
+  display: inline-block;
+  float: left;
+  font-weight: normal;
+}
+.navbar ul li.nav .combobox ul li .ext dl dd a {
+  margin-right: 25px;
+  color: #666;
+}
+.navbar ul li.nav .combobox ul li:hover {
+  background: #FFF;
+}
+.navbar ul li.nav .combobox ul li:hover .ext {
+  display: block;
+}
+.location {
+  height: 45px;
+  line-height: 45px;
+  font-size: 12px;
+}
+.location a {
+  font-size: 14px;
+}
+.location i {
+  font-size: 18px;
+}
+.main {
+  overflow: hidden;
+}
+.main .left {
+  width: 230px;
+  float: left;
+}
+.main .left .common {
+  margin-bottom: 10px;
+  border: 1px solid #E6E6E6;
+}
+.main .left .common h3 {
+  height: 32px;
+  line-height: 32px;
+  font-weight: normal;
+  text-indent: 10px;
+  background: #F7F7F7;
+  color: #333;
+}
+.main .left .cate {
+  border-top: 2px solid #CC0000;
+}
+.main .left .cate ul {
+  padding: 10px;
+}
+.main .left .cate ul li {
+  line-height: 28px;
+  font-size: 14px;
+}
+.main .left .cate ul li i {
+  color: #888;
+  cursor: pointer;
+}
+.main .left .cate ul li ul.ext {
+  padding: 5px 0;
+  margin-left: 15px;
+}
+.main .left .cate ul li ul.ext li {
+  font-size: 12px;
+  line-height: 25px;
+}
+.main .left .hot ul {
+  padding: 12px;
+}
+.main .left .hot ul li {
+  width: 205px;
+  height: 295px;
+  position: relative;
+}
+.main .left .hot ul li img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #E6E6E6;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main .left .hot ul li .title {
+  height: 35px;
+  overflow: hidden;
+  position: absolute;
+  top: 210px;
+  left: 0;
+}
+.main .left .hot ul li .price {
+  font-size: 18px;
+  color: #FF3333;
+  position: absolute;
+  top: 250px;
+  left: 0;
+}
+.main .left .hot ul li .time {
+  position: absolute;
+  top: 255px;
+  right: 0;
+}
+.main .left .view ul {
+  padding: 12px 12px 0 12px;
+}
+.main .left .view ul li {
+  width: 205px;
+  height: 90px;
+  border-bottom: 1px solid #E6E6E6;
+  margin-bottom: 10px;
+  position: relative;
+}
+.main .left .view ul li img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #E6E6E6;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main .left .view ul li .title {
+  width: 120px;
+  height: 40px;
+  line-height: 20px;
+  position: absolute;
+  top: 5px;
+  left: 90px;
+  overflow: hidden;
+}
+.main .left .view ul li .price {
+  font-size: 16px;
+  color: #FF3333;
+  position: absolute;
+  top: 55px;
+  left: 90px;
+}
+.main .right {
+  width: 960px;
+  float: right;
+}
+.home {
+  overflow: hidden;
+}
+.footer {
+  border-top: 1px solid #D9D9D9;
+  margin-top: 30px;
+}
+.footer .ensure {
+  height: 50px;
+  padding: 30px 0;
+  background: url(../img/icon_bg.png) no-repeat 0 30px;
+  border-bottom: 1px solid #D9D9D9;
+}
+.footer .ensure a {
+  width: 196px;
+  height: 50px;
+  line-height: 50px;
+  text-indent: 60px;
+  font-size: 18px;
+  display: inline-block;
+}
+.footer .service {
+  padding: 25px 0;
+  overflow: hidden;
+}
+.footer .service ul {
+  float: left;
+}
+.footer .service ul li {
+  width: 175px;
+  float: left;
+}
+.footer .service ul li h4 {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.footer .service ul li a {
+  height: 30px;
+  color: #666;
+  display: block;
+  line-height: 30px;
+}
+.footer .service ul li a:hover {
+  text-decoration: underline;
+}
+.footer .service dl {
+  width: 160px;
+  float: right;
+  padding-left: 60px;
+  margin-left: 30px;
+}
+.footer .service dl dt {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.footer .service dl dd {
+  height: 30px;
+  line-height: 30px;
+  color: #333;
+}
+.footer .service dl.hotline {
+  background: url(../img/footer.png) no-repeat 0 -90px;
+}
+.footer .service dl.hotline a {
+  color: #333;
+  text-indent: 28px;
+  background: url(../img/footer.png) no-repeat;
+  display: inline-block;
+}
+.footer .service dl.hotline a:hover {
+  text-decoration: underline;
+}
+.footer .service dl.cooperation {
+  background: url(../img/footer.png) no-repeat 0 -215px;
+}
+.footer .service dl.cooperation a {
+  display: inline-block;
+  background: #FF3333;
+  border-radius: 2px;
+  color: #FFF;
+  padding: 0 10px;
+  margin-top: 5px;
+}
+.footer .service dl.cooperation a:hover {
+  background: #C40000;
+}
+.footer .bottom {
+  padding: 30px 0;
+  background: #2D2D2D;
+}
+.footer .bottom .link {
+  padding: 5px 0;
+}
+.footer .bottom .link dl {
+  line-height: 25px;
+}
+.footer .bottom .link dl dt {
+  width: 65px;
+  vertical-align: top;
+  color: #CCC;
+  display: inline-block;
+}
+.footer .bottom .link dl dd {
+  width: 1130px;
+  display: inline-block;
+}
+.footer .bottom .link dl dd a {
+  color: #FFF;
+  margin: 0 8px;
+}
+.footer .bottom .link dl dd a:hover {
+  text-decoration: underline;
+}
+.footer .bottom .copyright {
+  color: #CCC;
+  padding: 5px 0;
+  line-height: 25px;
+}
+.footer .bottom .copyright a {
+  color: #CCC;
+  margin-right: 20px;
+}
+.footer .bottom .copyright a:hover {
+  text-decoration: underline;
+}
+.footer .bottom .copyright .authentication {
+  margin-top: 10px;
+}
+.footer .bottom .copyright .authentication a {
+  margin-right: 0px;
+  display: inline-block;
+}

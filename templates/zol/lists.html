@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{{$field['cate_name']}} - ZOL商城</title>
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/main.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/common.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/css/list.css">
+        <link rel="stylesheet" href="{{__ROOT__}}/templates/zol/style/font/css/font-awesome.min.css">
+        <script type="text/javascript" src="{{__ROOT__}}/templates/zol/style/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="{{__ROOT__}}/templates/zol/style/js/main.js"></script>
+    </head>
+    <body>
+    	{{include file="templates/zol/common/header.html"}}
+		
+		<!--整站通用导航菜单 开始-->
+		<div class="w100pre navbar">
+			<ul class="w1200">
+				<li class="nav"><a href="">全部商品分类</a><i class="fa fa-chevron-down"></i>
+					<div class="combobox">
+						<ul>
+							<?php foreach ($cateData as $k => $v): ?>
+								<li>{{$v['cate_name']}}
+									<div class="ext">
+										<?php foreach ($v['_data'] as $m => $n): ?>
+										<dl>
+											<dt>{{$n['cate_name']}}</dt>
+											<dd>
+												<?php foreach ($n['_data'] as $p => $q): ?>
+												<a href="{{U('Home/Lists/index',array('cate_id'=>$q['cate_id']))}}">{{$q['cate_name']}}</a>
+												<?php endforeach ?>
+											</dd>
+										</dl>
+										<?php endforeach ?>
+									</div>
+								</li>
+							<?php endforeach ?>
+						</ul>
+					</div>
+				</li>
+				<li><a href="{{__ROOT__}}">首页</a></li>
+				<li><a href="{{U('Home/Lists/Index',array('cate_id'=>12))}}">分类页</a></li>
+				<li><a href="{{U('Home/Goods/Index',array('goods_id'=>1))}}">详情页</a></li>
+				<li><a href="http://chenhua.wang" target="_blank">陈华博客</a></li>
+				<li><a href="http://www.wysls.com" target="_blank">大学生演讲网</a></li>
+			</ul>
+		</div>
+		<!--整站通用导航菜单 结束-->
+
+		<!--当前位置 开始-->
+		<div class="w1200 location">
+			<i class="fa fa-home"></i> <a href="{{__ROOT__}}">zol商城</a> > {{$field['cate_name']}}
+		</div>
+		<!--当前位置 结束-->
+
+		<!--主体部分 开始-->
+		<div class="w1200 main">
+			{{include file="templates/zol/common/left.html"}}
+			
+			<!--right 开始-->
+			<div class="right">
+				<div class="category_nav">
+					<h3>商品筛选 (共8034件)</h3>
+					<ul>
+						<li>
+							<dl>
+								<dt>品牌：</dt>
+								<dd>
+								{{getBrandUrl(Q('brand_id'),'全部',0)}}
+								<?php foreach ($brandData as $k => $v): ?>
+									{{getBrandUrl(Q('brand_id'),$v['brand_name'],$v['brand_id'])}}
+								<?php endforeach ?>
+								</dd>
+							</dl>
+							<!-- <a href="" class="more">更多 <i class="fa fa-angle-down"></i></a> -->
+						</li>
+						<li>
+							<dl>
+								<dt>价格区间：</dt>
+								<dd>
+									{{getPriceUrl(0,Q('price_level'))}}
+									<?php 
+									$price_level = preg_split('@\n@', $field['price_level']); 
+									foreach ($price_level as $k => $v):
+									?>
+									{{getPriceUrl(trim($v),Q('price_level'))}}
+									<?php endforeach ?>
+								</dd>
+							</dl>
+							<!-- <a href="" class="more">更多 <i class="fa fa-angle-down"></i></a> -->
+						</li>
+
+						<!--规格属性检索列表 开始-->
+						<?php foreach ($cateAttr as $k => $v): ?>
+							<li>
+								<dl>
+									<dt>{{$v['attr_name']}}：</dt>
+									<dd>
+										<?php 
+											$arr = explode('-', $_GET['s']);
+											$local = $arr[$k];
+										?>
+										{{getCateUrl(0,$k,'全部',$local)}}
+										<?php foreach ($v['attr_value'] as $m => $n): ?>
+											{{getCateUrl($n['goods_attr_value'],$k,$n['goods_attr_value'],$local)}}
+
+										<?php endforeach ?>
+									</dd>
+								</dl>
+							</li>
+						<?php endforeach ?>
+						<!--规格属性检索列表 结束-->
+
+					</ul>
+					<!-- <div class="open">
+						<a href="">更多选项 <i class="fa fa-angle-down"></i></a>
+					</div> -->
+				</div>
+
+				<div class="toolbar">
+					<ul>
+						<li class="pull_left">
+							<a href="" class="active">综合排名</a>
+							<a href="">销量</a>
+							<a href="">人气</a>
+							<a href="">价格</a>
+						</li>
+						<li class="pull_right">
+							<a href="" class="active"><i class="fa fa-th-large"></i> 大图</a>
+							<a href=""><i class="fa fa-list"></i> 列表</a>
+							<div class="page"><span><i class="fa fa-angle-left"></i></span> 2/100 <span><i class="fa fa-angle-right"></i></span></div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="list">
+					<ul>
+
+						<?php foreach ($goodsData['data'] as $k => $v): ?>
+							<li>
+								<a href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}" target="_blank">
+									<img src="{{__ROOT__}}/{{$v['list_pic']}}">
+									<h4>{{$v['goods_name']}}</h4>
+								</a>
+								<p class="price">¥{{$v['goods_price']}}</p>
+								<div class="boot">
+									总成交量：<span>112 笔</span>
+									<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1025031569&site=qq&menu=yes">
+	                                    <img src="http://wpa.qq.com/pa?p=2:1025031569:52" border="0">
+	                                </a>
+								</div>
+							</li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+
+				<div class="page_list"><ul>{{$goodsData['page']}}</ul></div>
+
+			</div>
+			<!--right 结束-->
+		</div>
+		<!--主体部分 结束-->
+
+		{{include file="templates/zol/common/footer.html"}}
+
+    </body>
+</html>

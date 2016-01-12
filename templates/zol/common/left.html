@@ -1,0 +1,45 @@
+<!--left 开始-->
+			<div class="left">
+				<div class="common cate">
+					<h3>商品分类</h3>
+					<ul><!--plus-square-o-->
+						<?php foreach ($cateRel['_data'] as $k => $v): ?>
+							<li><i class="fa fa-minus-square-o"></i> <a href="#">{{$v['cate_name']}}</a>
+								<ul class="ext">
+									<?php foreach ($v['_data'] as $m => $n): ?>
+										<li><i class="fa fa-angle-right"></i> <a href="{{U('Home/Lists/index',array('cate_id'=>$n['cate_id']))}}">{{$n['cate_name']}}</a></li>
+									<?php endforeach ?>
+								</ul>
+							</li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+
+				<div class="common hot">
+					<h3>限时抢购</h3>
+					<ul><!--minus-square-o-->
+						<?php foreach ($new as $k => $v): ?>
+						<li>
+							<a href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}"><img src="{{__ROOT__}}/{{$v['thumb_pic']}}"></a>
+							<a class="title">{{$v['goods_name']}}</a>
+							<p class="price">￥{{$v['goods_price']}}</p>
+							<p class="time"><i class="fa fa-clock-o"></i> {{date('Y年m月d日',$v['create_at'])}}</p>
+						</li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+
+				<div class="common view">
+					<h3>最近浏览</h3>
+					<ul><!--minus-square-o-->
+						<?php foreach ((array)$viewData as $k => $v): ?>
+						<li>
+							<a href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}"><img src="{{__ROOT__}}/{{$v['thumb_pic']}}"></a>
+							<a class="title" href="{{U('Goods/index',array('goods_id'=>$v['goods_id']))}}">{{$v['goods_name']}}</a>
+							<p class="price">￥{{$v['goods_price']}}</p>
+						</li>
+						<?php endforeach ?>
+					</ul>
+				</div>
+			</div>
+			<!--left 结束-->
